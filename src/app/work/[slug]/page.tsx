@@ -70,6 +70,30 @@ export default async function ProjectPage({
               <p className="mt-3 text-sm leading-7 text-white/60">
                 {project.technologies.join(" · ")}
               </p>
+              {(project.github || project.deployed) && (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition-colors hover:border-signal hover:text-white"
+                    >
+                      GitHub ↗
+                    </a>
+                  ) : null}
+                  {project.deployed ? (
+                    <a
+                      href={project.deployed}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition-colors hover:border-signal hover:text-white"
+                    >
+                      Live Demo ↗
+                    </a>
+                  ) : null}
+                </div>
+              )}
             </div>
           </div>
           <div className="mt-16">

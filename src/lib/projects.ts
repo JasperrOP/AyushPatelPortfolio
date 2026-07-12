@@ -9,6 +9,8 @@ export type Project = {
   capabilities: string[];
   system: string[];
   visual: "research" | "model" | "location" | "booking" | "predictive" | "assessment";
+  github?: string;
+  deployed?: string;
   /** Optional real screenshot/mockup — path under /public. Falls back to the generated diagram when omitted. */
   image?: string;
 };
@@ -21,6 +23,8 @@ export const projects: Project[] = [
     outcomes: ["Designed to reduce manual research effort significantly.", "Uses Mistral Small to keep average query response time low."],
     capabilities: ["Agent workflows using LangChain agents, tools, and runnables", "Dynamic task execution and multi-step reasoning", "Real-time extraction through Tavily API and BeautifulSoup", "Streamlit interface for real-time research insights"],
     system: ["Research query", "LangChain agents & tools", "Tavily API / BeautifulSoup", "Mistral Small", "Streamlit insights"], visual: "research",
+    github: "https://github.com/JasperrOP/Synagent",
+    deployed: "https://synagentai.streamlit.app/",
   },
   {
     slug: "quolagpt", index: "02", category: "Multilingual Transformer language model", name: "QuolaGPT",
@@ -29,6 +33,8 @@ export const projects: Project[] = [
     outcomes: ["Enabled basic multilingual text-generation capabilities.", "Built without Hugging Face Transformers or OpenAI APIs."],
     capabilities: ["Custom tokenizer, embeddings, multi-head self-attention, positional encoding, and Transformer blocks", "Training and inference pipeline with preprocessing, checkpointing, evaluation, and generation", "Interactive full-stack inference application using FastAPI and ReactJS"],
     system: ["English & Hindi datasets", "Custom tokenizer", "Transformer blocks", "Training / inference", "FastAPI + ReactJS"], visual: "model",
+    github: "https://github.com/JasperrOP/QuolaGPT",
+    deployed: "https://jasperrop-quolagpt-app-jvuy7z.streamlit.app/",
   },
   {
     slug: "real-time-location-sharing", index: "03", category: "Real-time collaboration platform", name: "Real-Time Location Sharing",
@@ -37,6 +43,8 @@ export const projects: Project[] = [
     outcomes: ["Enables multiple users to join, share locations, and collaborate in real time.", "Frontend deployed on Vercel and backend deployed on Render."],
     capabilities: ["Live position sharing through Socket.IO with minimal latency", "Interactive maps with dynamic markers and smooth movement updates", "WebRTC peer-to-peer communication to improve scalability and reduce server load", "Responsive room-based interface for joining and viewing participants"],
     system: ["Users", "Socket.IO rooms", "Leaflet map updates", "WebRTC peers", "Vercel / Render"], visual: "location",
+    github: "https://github.com/JasperrOP/real-time-location-webrtc",
+    deployed: "https://real-time-location-webrtc.vercel.app/auth",
   },
   {
     slug: "movie-booking", index: "04", category: "Full-stack cinema management system", name: "Movie Booking Application",
@@ -45,6 +53,7 @@ export const projects: Project[] = [
     outcomes: ["Streamlined ticket reservations with an interactive, real-time seating map.", "Reduced manual verification effort with QR-based ticket scanning."],
     capabilities: ["Role-based authentication via JWT for users, admins, and staff", "Admin console for managing theatres, screens, and show schedules", "Interactive seat-selection map with live reservation state", "QR-based ticket verification for streamlined check-in", "Food ordering and booking-history management"],
     system: ["User booking", "Seat map & JWT auth", "MongoDB", "Admin console", "QR verification"], visual: "booking",
+    github: "https://github.com/JasperrOP/MovieBooking",
   },
   {
     slug: "carvium", index: "05", category: "ML-powered car price predictor", name: "Carvium",
@@ -53,6 +62,8 @@ export const projects: Project[] = [
     outcomes: ["Gives users an instant, data-driven price estimate instead of manual guesswork.", "Packaged the trained model for lightweight, low-latency inference."],
     capabilities: ["Regression model trained on historical car listing data", "Feature engineering and preprocessing pipeline notebook", "Serialized model served via a Flask REST endpoint", "Simple web UI for entering vehicle details and viewing predictions"],
     system: ["Vehicle details form", "Flask API", "Trained regression model", "Predicted price"], visual: "predictive",
+    github: "https://github.com/JasperrOP/carvium-app",
+    deployed: "https://carvium-app-1.onrender.com/",
   },
   {
     slug: "axesai", index: "06", category: "AI-powered assessment generator", name: "AxesAI",
@@ -61,6 +72,16 @@ export const projects: Project[] = [
     outcomes: ["Cuts down the manual effort of writing assessment questions from scratch.", "Produces structured, ready-to-use question sets on demand."],
     capabilities: ["LLM-driven question and answer generation", "Structured output suited for direct use in quizzes or tests", "Configurable topic and content input for tailored assessments"],
     system: ["Topic / content input", "LLM prompt pipeline", "Structured question set", "Assessment output"], visual: "assessment",
+    github: "https://github.com/JasperrOP/AxesAI",
+  },
+  {
+    slug: "aera", index: "07", category: "React + Vite web application", name: "Aera",
+    statement: "A modern frontend experience from the Aera repository, built as a Vite-powered React app with a polished, responsive interface.",
+    technologies: ["React", "Vite", "JavaScript", "CSS", "HTML"],
+    outcomes: ["Adds a modern frontend project to the portfolio showcase.", "Demonstrates a lightweight, fast workflow suitable for interactive web experiences."],
+    capabilities: ["Component-based UI development with React", "Fast local development workflow using Vite", "Responsive styling and polished user experience", "Deployment-ready frontend architecture"],
+    system: ["UI components", "Vite build pipeline", "Responsive styling", "Interactive frontend experience"], visual: "assessment",
+    github: "https://github.com/JasperrOP/Aera",
   },
 ];
 
