@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: { default: "Ayush Patel — Software Engineer & AI/ML Engineer", template: "%s | Ayush Patel" },
   description:
     "Ayush Patel is a Software Engineer and AI/ML Engineer building full-stack applications and LLM-powered, agentic AI systems with LangChain, LangGraph, and RAG.",
+    verification: {
+    google: "18IQDCSw4UERmco5QJjAPKp_bQ4yjxicyU_rRNElRKk",
+  },
   keywords: [
     "GenAI Engineer",
     "LLM",
