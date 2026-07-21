@@ -33,3 +33,5 @@ This is a standard Next.js 15 App Router project — deploys as-is to Vercel (re
 - Projects, skills: `src/lib/projects.ts`
 - Contact info / socials: `src/components/layout/site-header.tsx`, `src/components/layout/site-footer.tsx`, `src/app/page.tsx` (contact section), `src/app/layout.tsx` (metadata)
 - Experience / education copy: `src/app/page.tsx`
+
+this is phase 2
