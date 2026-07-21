@@ -5,28 +5,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#0b0c0f",
-        surface: "#121419",
-        paper: "#f4f2ed",
-        signal: "#9a7cff",
-        cyan: "#75e1ff",
+        void: "#000000",
+        carbon: "#0a0a0c",
+        card: "#101013",
+        paper: "#ffffff",
+        violet: {
+          DEFAULT: "#8b5cf6",
+          bright: "#a855f7",
+        },
+        indigo: { deep: "#241f52" },
+        amber: { signal: "#fbbf24" },
+        salmon: "#fca5a5",
+        blaze: "#ff3b0f",
+        forest: "#0f6b45",
+        blush: "#ffc3d0",
+        sand: "#c9c3b2",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
-      },
-      boxShadow: {
-        card: "0 24px 48px -12px rgba(0, 0, 0, 0.45)",
-        "card-hover": "0 32px 64px -16px rgba(154, 124, 255, 0.18)",
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        condensed: ["var(--font-condensed)", "Impact", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       keyframes: {
-        "particle-float": {
-          "0%, 100%": { transform: "translate3d(0, 0, 0)", opacity: "0.25" },
-          "50%": { transform: "translate3d(0, -18px, 0)", opacity: "0.85" },
+        drift: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0)", opacity: "0.2" },
+          "50%": { transform: "translate3d(0, -14px, 0)", opacity: "0.8" },
         },
       },
       animation: {
-        "particle-float": "particle-float 8s ease-in-out infinite",
+        drift: "drift 9s ease-in-out infinite",
       },
     },
   },

@@ -11,29 +11,34 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <main id="main" className="px-5 pb-24 pt-32 md:px-8 md:pb-40 md:pt-48">
-      <div className="mx-auto max-w-[1440px]">
-        <p data-motion="page-reveal" className="eyebrow">
+    <main id="main" className="gutter pb-24 pt-32 md:pb-40 md:pt-48">
+      <div className="mx-auto max-w-[1600px]">
+        <p className="eyebrow text-paper/70">
           Selected work / {String(projects.length).padStart(2, "0")} projects
         </p>
         <SplitHeadline
           as="h1"
           immediate={false}
-          className="display mt-6 max-w-4xl text-6xl md:text-9xl"
+          className="display mt-10 max-w-5xl text-[clamp(2.75rem,8vw,7rem)] text-paper"
         >
           A closer look at the systems behind the interface.
         </SplitHeadline>
-        <div className="mt-20">
+
+        <div className="mt-24">
           <ProjectShowcase projects={projects} />
         </div>
+
         <div className="mt-24 border-t border-white/10 pt-12">
           <Link
             data-magnetic
             data-hover-lift
             href="/#contact"
-            className="text-lg text-white/70 transition-colors hover:text-white"
+            className="pill border border-white/20 bg-white/[0.04] text-paper hover:bg-paper hover:text-void"
           >
-            Start a conversation ↗
+            Start a conversation
+            <span className="ml-3" aria-hidden="true">
+              ↗
+            </span>
           </Link>
         </div>
       </div>

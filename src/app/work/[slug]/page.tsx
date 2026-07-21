@@ -38,7 +38,7 @@ export default async function ProjectPage({
         <div className="mx-auto max-w-[1440px]">
           <Link
             href="/work"
-            className="eyebrow transition-colors hover:text-signal"
+            className="eyebrow transition-colors hover:text-violet-bright"
             data-hover-lift
           >
             ← All work
@@ -57,7 +57,7 @@ export default async function ProjectPage({
               </SplitHeadline>
               <p
                 data-motion="page-reveal"
-                className="lead mt-8 max-w-2xl"
+                className="mt-8 max-w-2xl text-[clamp(1.05rem,1.4vw,1.25rem)] leading-[1.65] text-paper/70"
               >
                 {project.statement}
               </p>
@@ -77,7 +77,7 @@ export default async function ProjectPage({
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition-colors hover:border-signal hover:text-white"
+                      className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition-colors hover:border-violet hover:text-white"
                     >
                       GitHub ↗
                     </a>
@@ -87,7 +87,7 @@ export default async function ProjectPage({
                       href={project.deployed}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition-colors hover:border-signal hover:text-white"
+                      className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition-colors hover:border-violet hover:text-white"
                     >
                       Live Demo ↗
                     </a>
@@ -102,10 +102,10 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      <section className="bg-paper px-5 py-20 text-ink md:px-8 md:py-32">
+      <section className="bg-paper px-5 py-20 text-void md:px-8 md:py-32">
         <div className="mx-auto grid max-w-[1120px] gap-16 md:grid-cols-[1fr_2fr]">
           <div>
-            <p className="eyebrow !text-ink/55">What it does</p>
+            <p className="eyebrow !text-void/55">What it does</p>
           </div>
           <div>
             <p
@@ -118,7 +118,7 @@ export default async function ProjectPage({
               {project.outcomes.map((outcome) => (
                 <p
                   data-motion="page-reveal"
-                  className="border-t border-ink/15 pt-5 text-base leading-7 text-ink/70"
+                  className="border-t border-void/15 pt-5 text-base leading-7 text-void/70"
                   key={outcome}
                 >
                   {outcome}
@@ -136,10 +136,10 @@ export default async function ProjectPage({
             {project.system.map((step, i) => (
               <li
                 data-motion="system-step"
-                className="min-h-36 bg-ink p-6"
+                className="min-h-36 bg-void p-6"
                 key={step}
               >
-                <span className="font-mono text-xs text-signal">0{i + 1}</span>
+                <span className="mono text-xs text-violet-bright">0{i + 1}</span>
                 <p className="mt-8 text-lg tracking-[-0.03em] text-white/90">{step}</p>
               </li>
             ))}
@@ -159,7 +159,7 @@ export default async function ProjectPage({
                 className="grid gap-5 py-7 md:grid-cols-[48px_1fr]"
                 key={item}
               >
-                <span className="font-mono text-xs text-signal">0{i + 1}</span>
+                <span className="mono text-xs text-violet-bright">0{i + 1}</span>
                 <span className="text-lg leading-7 text-white/78">{item}</span>
               </li>
             ))}
@@ -167,10 +167,10 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      <section className="bg-signal px-5 py-16 text-ink md:px-8 md:py-24">
+      <section className="bg-violet px-5 py-16 text-paper md:px-8 md:py-24">
         <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <p className="eyebrow !text-ink/60">Next project</p>
+            <p className="eyebrow !text-void/60">Next project</p>
             <p className="display mt-4 text-5xl md:text-7xl">{next.name}</p>
           </div>
           <Link

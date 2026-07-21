@@ -64,7 +64,7 @@ export function ProjectShowcase({ projects }: { projects: Project[] }) {
           {/* Ghost index number */}
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -left-2 top-1/2 -translate-y-1/2 select-none font-mono text-[6rem] font-medium leading-none text-white/[0.035] transition-colors duration-500 group-hover:text-signal/[0.08] md:text-[9rem]"
+            className="mono pointer-events-none absolute -left-2 top-1/2 -translate-y-1/2 select-none text-[6rem] font-medium leading-none text-white/[0.035] transition-colors duration-500 group-hover:text-violet/[0.1] md:text-[9rem]"
           >
             {project.index}
           </span>
@@ -76,9 +76,9 @@ export function ProjectShowcase({ projects }: { projects: Project[] }) {
           />
 
           <div className="relative z-10 flex min-w-0 flex-1 items-baseline gap-4 md:gap-8">
-            <span className="shrink-0 font-mono text-xs text-signal">{project.index}</span>
+            <span className="mono shrink-0 text-xs text-violet-bright">{project.index}</span>
             <div className="min-w-0">
-              <h3 className="truncate text-3xl tracking-[-0.045em] text-white/90 transition-all duration-500 group-hover:translate-x-2 group-hover:text-white sm:text-4xl md:text-6xl">
+              <h3 className="display truncate text-3xl text-white/90 transition-all duration-500 group-hover:translate-x-2 group-hover:text-white sm:text-4xl md:text-6xl">
                 {project.name}
               </h3>
               <p className="mt-2 hidden max-w-md truncate text-sm text-white/45 transition-colors duration-500 group-hover:text-white/65 md:block">
@@ -91,7 +91,7 @@ export function ProjectShowcase({ projects }: { projects: Project[] }) {
             {project.technologies.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] tracking-[0.06em] text-white/45 transition-colors duration-500 group-hover:border-signal/40 group-hover:text-white/70"
+                className="mono rounded-full border border-white/10 px-3 py-1 text-[10px] tracking-[0.06em] text-white/45 transition-colors duration-500 group-hover:border-violet/50 group-hover:text-white/70"
               >
                 {tech}
               </span>
@@ -99,7 +99,7 @@ export function ProjectShowcase({ projects }: { projects: Project[] }) {
           </div>
 
           <span
-            className="relative z-10 shrink-0 text-2xl text-white/35 transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-signal"
+            className="relative z-10 shrink-0 text-2xl text-white/35 transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-violet-bright"
             aria-hidden="true"
           >
             ↗
@@ -115,7 +115,13 @@ export function ProjectShowcase({ projects }: { projects: Project[] }) {
           ready && activeIndex !== null ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="scale-95 shadow-card-hover transition-transform duration-300 ease-out" style={{ transform: ready ? "scale(1)" : "scale(0.92)" }}>
+        <div
+          className="scale-95 transition-transform duration-300 ease-out"
+          style={{
+            transform: ready ? "scale(1)" : "scale(0.92)",
+            boxShadow: "0 32px 64px -16px rgba(139, 92, 246, 0.25)",
+          }}
+        >
           {activeIndex !== null ? <ProjectVisual project={projects[activeIndex]} /> : null}
         </div>
       </div>

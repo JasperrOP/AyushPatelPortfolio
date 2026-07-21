@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import type { Project } from "@/lib/projects";
 import { prefersReducedMotion } from "@/lib/motion";
 
 export function ProjectVisual({ project }: { project: Project }) {
   const root = useRef<HTMLDivElement>(null);
+  /* Screenshots are optional — fall back to the generated system map if the
+     file hasn't been added to /public yet. */
+  const [imageFailed, setImageFailed] = useState(false);
 
   const pathsByVisual: Record<Project["visual"], string[]> = {
     research: ["M24 165 C110 165 112 56 200 56 S286 123 370 123", "M200 56 C250 56 252 196 408 196"],
@@ -105,7 +108,7 @@ export function ProjectVisual({ project }: { project: Project }) {
     return () => ctx?.revert();
   }, []);
 
-  if (project.image) {
+  if (project.image && !imageFailed) {
     return (
       <div
         ref={root}
@@ -123,6 +126,7 @@ export function ProjectVisual({ project }: { project: Project }) {
             sizes="(min-width: 768px) 60vw, 100vw"
             className="object-cover object-top"
             priority={false}
+            onError={() => setImageFailed(true)}
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/0" />
         </div>
